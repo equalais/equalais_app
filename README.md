@@ -1,12 +1,11 @@
 # equalAIs app
 
-![watermark](equalAIs_watermark.png){:height="100px" width="100px"}
-
 The equalAIs app provides three levels of protection and control to an image:
 
-1. Adversial attack against face recognition
-1. Stegnographic message encoding
-1. Visible watermark
+| | |
+|-|-|
+| <img src="equalAIs_watermark.png" width="75"> | 1. Adversial attack against face recognition </br> 2. Stegnographic message encoding </br> 3. Visible watermark |
+|||
 
 Current REST API: `https://equalais.ue.r.appspot.com`
 
