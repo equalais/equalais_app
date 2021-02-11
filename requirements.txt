@@ -1,0 +1,9 @@
+flask-cors==3.0.3  # Google app engine requirement
+flask==0.12.2  # Google app engine requirement
+# git+http://github.com/tensorflow/cleverhans.git#egg=cleverhans  # bleeding-edge
+cleverhans==2.1.0
+gunicorn==19.7.1  # Google app engine requirement
+numpy==1.14.2
+Pillow==8.1.0
+keras==2.1.5
+tensorflow==1.7.0

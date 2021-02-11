@@ -1,0 +1,3 @@
+[flake8]
+ignore = E501,W503,E203, D100, D102, D103, D104, D107, D200, D201, D202, D205, D210, D400, D401 
+exclude = .git,__pycache__,docs/source/conf.py
