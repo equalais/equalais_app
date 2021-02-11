@@ -1,6 +1,6 @@
 # equalAIs app
 
-![watermark](equalAIs_watermark.png)
+![watermark](equalAIs_watermark.png){:height="100px" width="100px"}
 
 The equalAIs app provides three levels of protection and control to an image:
 
