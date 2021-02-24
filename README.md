@@ -40,3 +40,53 @@ Current REST API: `https://equalais.ue.r.appspot.com`
    ```
 
 1. Then update the URL in `equalais.github.io/js/tool.js` to be `http://0.0.0.0:8080`.
+
+## Running equalAIs components manually
+
+In order to run components of equalAIs manually (i.e., not using the hosted tool), you will need to clone this repository. We do not currently provide a script for running the adversarial attack manually.
+
+For details on implementation and argument options, please see the Python scripts in src.
+
+### Steganography
+
+The equalAIs webtool uses the following by default:
+
+- `--message`: `I do not consent to use of face detection on this image or derivatives of this image.`
+- `--token`: `elephant_garlic_pizza`
+
+We are planning on updating our API to allow users to define their own message and decode token, however this is not currently available. In the meantime you can customize your steganographic message and token by running the steganography script manually.
+
+#### Manually encoding steganographic message
+
+If you would like to use a custom message and decoding token, you can run the steganography script using the following command in the root of this project:
+
+```bash
+python -m src.steganography encode path/to/photo.png --message "your-custom-message" --token "your-special-token"
+```
+
+#### Decoding steganographic message
+
+You can decode your image that has been run through the equalAIs tool by running the following command in the root of this project:
+
+```bash
+python -m src.steganography decode "path/to/equalais/photo.png" --token "elephant_garlic_pizza"
+```
+
+If your image has been run through the webtool, by default this should return the message:
+
+> I do not consent to use of face detection on this image or derivatives of this image.
+
+#### Method
+
+We use the Least Significant Bit (LSB) technique. The implementation we use is heavily based off of [Abdou Rockikz's well-explained demonstration](https://www.thepythoncode.com/article/hide-secret-data-in-images-using-steganography-python). Please note that a limitation of the LSB technique is that it only works on lossless compression images. As a result, we only write our images as `.png` files.
+
+Our tool is a proof-of-concept, and we welcome suggestions and pull-request contributions for more robust techniques!
+
+### Watermark
+
+You can also manually add a watermark to an image using the following command:
+
+```bash
+python -m src.watermark "path/to/photo.png"
+```
+
